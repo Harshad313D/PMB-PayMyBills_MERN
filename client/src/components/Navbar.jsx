@@ -41,6 +41,9 @@ const Navbar = () => {
 
     navigate("/login");
   };
+  if (location.pathname === "/chat") {
+    return null;
+  }
 
   return (
     <nav
@@ -61,11 +64,11 @@ const Navbar = () => {
           <Link to="/">
             <button className="hover:text-blue-500">Products </button>
           </Link>
-          <Link to="/about">
-            <button className="hover:text-blue-500">Customer </button>
+          <Link to="/chat">
+            <button className="hover:text-blue-500">chats </button>
           </Link>
-          <Link to="/contact">
-            <button className="hover:text-blue-500">Company </button>
+          <Link to="/Notification">
+            <button className="hover:text-blue-500">Notification </button>
           </Link>
         </div>
       </div>

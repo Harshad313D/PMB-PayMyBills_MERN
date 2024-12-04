@@ -14,11 +14,13 @@ app.use(cookieParser())
 // routes import
 import userRouter from "./routes/userRoutes.js";
 import cardsRouter from "./routes/cardsRoutes.js"
-// import requestRouter from "./routes/requestRoutes.js";
+import requestRouter from "./routes/friendRequestRoutes.js"
+import messageRouter from "./routes/messageRoutes.js"
 // // routes declaration
 app.use("/api/v1/users", userRouter)
 app.use("/api/v1/cards", cardsRouter)
-// app.use("/api/v1/requests", requestRouter)
+app.use("/api/v1/request", requestRouter)
+app.use("/api/v1/message", messageRouter)
 
 export default app
 

@@ -206,7 +206,7 @@ const Card = ({ card, fetchCards }) => {
         {isOwner && (
           <>
             <Button
-              className=" text-green-500 border-green-500 hover:bg-green-600"
+              className=" ml-2 text-green-500 border-green-500 hover:bg-green-600"
               onClick={openModal}
             >
               Update

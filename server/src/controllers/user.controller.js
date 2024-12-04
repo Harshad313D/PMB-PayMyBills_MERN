@@ -129,4 +129,17 @@ const logoutUser = asyncHandler(async (req, res) => {
         .json({ message: "User logged out successfully" });
 });
 
-export { registerUser, loginUser, logoutUser, generateAccessAndRefreshTokens };
+const getUserProfile = async(req, res) => {
+  try{
+    const loggedInUser = req.user._id;
+
+    const filteredUsers = await User.find({_id:{$ne:loggedInUser}}).select("-password")
+    res.status(200).json({filteredUsers}) 
+  }catch(err){
+    console.error(err);
+    return res.status(500).json({error:"server error"})
+  }
+
+}
+
+export { registerUser, loginUser, logoutUser, generateAccessAndRefreshTokens, getUserProfile };
